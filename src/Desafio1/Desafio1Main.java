@@ -16,7 +16,7 @@ public class Desafio1Main {
             } else {
                 System.out.println("Compra efetuada com sucesso.");
             }
-        } else if (bebida.equalsIgnoreCase(BebidasEnum.REFRIGERANTE.name()) || (bebida.equalsIgnoreCase(BebidasEnum.AGUA.name()))) {
+        } else if (bebida.equalsIgnoreCase(BebidasEnum.REFRIGERANTE.name()) || (bebida.equalsIgnoreCase(BebidasEnum.ÁGUA.name()))) {
             System.out.println("Compra efetuada com sucesso.");
         } else {
             System.out.println("Produto não existe no mercado. No momento só temos disponível: Cerveja, Refrigerante ou Água ");

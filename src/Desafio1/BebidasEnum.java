@@ -1,7 +1,7 @@
 package Desafio1;
 
 public enum BebidasEnum {
-    CERVEJA(18), AGUA(0), REFRIGERANTE(0);
+    CERVEJA(18), ÁGUA(0), REFRIGERANTE(0);
 
     private Integer idadeMinima;
 
