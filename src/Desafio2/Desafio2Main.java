@@ -1,7 +1,5 @@
 package Desafio2;
 
-//import Desafio1.BebidasEnum;
-
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
