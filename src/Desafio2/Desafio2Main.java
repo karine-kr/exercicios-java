@@ -17,21 +17,25 @@ public class Desafio2Main {
         String porcentageMensagem = new String();
         float valorTotal;
 
-        if (quantidade <= 10) {
-            valorTotal = calcularDesconto(preco, 0, quantidade);
-        } else if (quantidade <= TabelaDescontosEnum.DESCONTO_10.getLimiteUnidades()) {
-            valorTotal = calcularDesconto(preco, TabelaDescontosEnum.DESCONTO_10.getPorcentagemDesconto(), quantidade);
-            porcentageMensagem = " com " + TabelaDescontosEnum.DESCONTO_10.getMensagem() + " de desconto";
-        } else if (quantidade <= TabelaDescontosEnum.DESCONTO_20.getLimiteUnidades()) {
-            valorTotal = calcularDesconto(preco, TabelaDescontosEnum.DESCONTO_20.getPorcentagemDesconto(), quantidade);
-            porcentageMensagem = " com " + TabelaDescontosEnum.DESCONTO_20.getMensagem() + " de desconto";
-        } else {
-            valorTotal = calcularDesconto(preco, TabelaDescontosEnum.DESCONTO_25.getPorcentagemDesconto(), quantidade);
-            porcentageMensagem = " com " + TabelaDescontosEnum.DESCONTO_25.getMensagem() + " de desconto";
-        }
+        if ((quantidade > 0) &&  (preco > 0)) {
+            if (quantidade <= 10) {
+                valorTotal = calcularDesconto(preco, 0, quantidade);
+            } else if (quantidade <= TabelaDescontosEnum.DESCONTO_10.getLimiteUnidades()) {
+                valorTotal = calcularDesconto(preco, TabelaDescontosEnum.DESCONTO_10.getPorcentagemDesconto(), quantidade);
+                porcentageMensagem = " com " + TabelaDescontosEnum.DESCONTO_10.getMensagem() + " de desconto";
+            } else if (quantidade <= TabelaDescontosEnum.DESCONTO_20.getLimiteUnidades()) {
+                valorTotal = calcularDesconto(preco, TabelaDescontosEnum.DESCONTO_20.getPorcentagemDesconto(), quantidade);
+                porcentageMensagem = " com " + TabelaDescontosEnum.DESCONTO_20.getMensagem() + " de desconto";
+            } else {
+                valorTotal = calcularDesconto(preco, TabelaDescontosEnum.DESCONTO_25.getPorcentagemDesconto(), quantidade);
+                porcentageMensagem = " com " + TabelaDescontosEnum.DESCONTO_25.getMensagem() + " de desconto";
+            }
 
-        DecimalFormat df = new DecimalFormat("#.00");
-        System.out.println("O preço total" + porcentageMensagem + " é de R$ " + df.format(valorTotal));
+            DecimalFormat df = new DecimalFormat("0.00");
+            System.out.println("O preço total" + porcentageMensagem + " é de R$ " + df.format(valorTotal));
+        }else {
+            System.out.println("Preço ou quantidade não pode ser zero!!!");
+        }
     }
 
     private static Float calcularDesconto(Float preco, Integer porcentagem, Integer quantidade) {
