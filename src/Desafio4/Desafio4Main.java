@@ -26,9 +26,6 @@ public class Desafio4Main {
                 System.out.println("O valor do cálculo desejado foi de " + df.format(calculo));
                 break;
             case "/":
-                //validar se valor é zero
-                //se verdadeiro, fazer o cácluclo
-                //senao imprimir mensagem de erro
                 if (segundoNumero != 0){
                     calculo = (primeiroNumero / segundoNumero);
                     System.out.println("O valor do cálculo desejado foi de " + df.format(calculo));

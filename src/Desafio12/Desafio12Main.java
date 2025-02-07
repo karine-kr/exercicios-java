@@ -18,26 +18,3 @@ public class Desafio12Main {
         System.out.print("totalizando " + impar + " números ímpares.");
     }
 }
-
-
-
-
-
-
-
-//        int vetor2 [] = {};
-//        int quantidade = 0;
-//
-//        for(int i = 0; i < numeros.length; i++) {
-//
-//            if (i % 2 != 0) {
-//                vetor2 = new int[]{numeros[i]};
-//                quantidade = vetor2.length;
-//                System.out.println("A quantidade de números impares é " + quantidade + ", sendo os números: " + numeros);
-//
-//            }
-//
-//        }
-//
-//    }
-//}
