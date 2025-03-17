@@ -14,25 +14,26 @@ public class Desafio2Main {
 
         System.out.println("Informe a quantidade que deseja comprar:");
         int quantidade = mercado.nextInt();
-        String porcentageMensagem = new String();
+        String porcentageMensagem;
         float valorTotal;
 
         if ((quantidade > 0) &&  (preco > 0)) {
             if (quantidade <= 10) {
                 valorTotal = calcularDesconto(preco, 0, quantidade);
-            } else if (quantidade <= TabelaDescontosEnum.DESCONTO_10.getLimiteUnidades()) {
-                valorTotal = calcularDesconto(preco, TabelaDescontosEnum.DESCONTO_10.getPorcentagemDesconto(), quantidade);
-                porcentageMensagem = " com " + TabelaDescontosEnum.DESCONTO_10.getMensagem() + " de desconto";
-            } else if (quantidade <= TabelaDescontosEnum.DESCONTO_20.getLimiteUnidades()) {
-                valorTotal = calcularDesconto(preco, TabelaDescontosEnum.DESCONTO_20.getPorcentagemDesconto(), quantidade);
-                porcentageMensagem = " com " + TabelaDescontosEnum.DESCONTO_20.getMensagem() + " de desconto";
+                porcentageMensagem = " sem desconto.";
+            } else if (quantidade <= 10) {
+                valorTotal = calcularDesconto(preco, 10, quantidade);
+                porcentageMensagem = " com 10% de desconto.";
+            } else if (quantidade <= 50) {
+                valorTotal = calcularDesconto(preco, 20, quantidade);
+                porcentageMensagem = " com 20% de desconto.";
             } else {
-                valorTotal = calcularDesconto(preco, TabelaDescontosEnum.DESCONTO_25.getPorcentagemDesconto(), quantidade);
-                porcentageMensagem = " com " + TabelaDescontosEnum.DESCONTO_25.getMensagem() + " de desconto";
+                valorTotal = calcularDesconto(preco, 50, quantidade);
+                porcentageMensagem = " com 25% de desconto.";
             }
 
             DecimalFormat df = new DecimalFormat("0.00");
-            System.out.println("O preço total" + porcentageMensagem + " é de R$ " + df.format(valorTotal));
+            System.out.println("O valor total do produto " + produto + " é de R$ " + df.format(valorTotal) + porcentageMensagem);
         }else {
             System.out.println("Preço ou quantidade não pode ser zero!!!");
         }
