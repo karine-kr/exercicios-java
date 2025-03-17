@@ -21,14 +21,14 @@ public class Desafio2Main {
             if (quantidade <= 10) {
                 valorTotal = calcularDesconto(preco, 0, quantidade);
                 porcentageMensagem = " sem desconto.";
-            } else if (quantidade <= 10) {
+            } else if (quantidade <= 20) {
                 valorTotal = calcularDesconto(preco, 10, quantidade);
                 porcentageMensagem = " com 10% de desconto.";
             } else if (quantidade <= 50) {
                 valorTotal = calcularDesconto(preco, 20, quantidade);
                 porcentageMensagem = " com 20% de desconto.";
             } else {
-                valorTotal = calcularDesconto(preco, 50, quantidade);
+                valorTotal = calcularDesconto(preco, 25, quantidade);
                 porcentageMensagem = " com 25% de desconto.";
             }
 
